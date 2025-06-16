@@ -1,0 +1,20 @@
+🧪 Caso de Prueba: Inicio de sesión exitoso
+
+ID: TC_LOGIN_001
+
+Título: Verificar que el usuario puede iniciar sesión exitosamente con credenciales válidas.
+Módulo: Autenticación
+
+Precondición:
+El usuario se encuentra en la URL: https://the-internet.herokuapp.com/login
+
+🔄 Pasos a seguir:
+Ingresar el nombre de usuario válido: tomsmith
+Ingresar la contraseña válida: SuperSecretPassword!
+Hacer clic en el botón Login
+
+
+✅ Resultado esperado:
+El sistema redirige al usuario a la página Secure Area: https://the-internet.herokuapp.com/secure
+Se muestra el mensaje: "You logged into a secure area!"
+El botón Logout está visible

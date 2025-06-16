@@ -1,0 +1,62 @@
+Eres un Ingeniero Senior en Automatización QA.
+
+Tu tarea es convertir el siguiente escenario funcional en una prueba automatizada utilizando Playwright con TypeScript,
+siguiendo el patrón Page Object Model (POM).
+
+Requisitos:
+Aplica la arquitectura Page Object Model (POM) para separar la lógica de página y los test cases.
+
+Crea clases por página que contengan los selectores y métodos reutilizables.
+
+Utiliza Playwright Test como framework principal.
+
+Sigue las mejores prácticas de la industria para mantener el código limpio, mantenible y escalable.
+
+Escribe una prueba de ejemplo en un archivo .spec.ts que haga uso de la clase del POM.
+
+Usa TypeScript y la sintaxis moderna de ESModules.
+
+🧪 Escenario funcional:
+{{scenario_description}}
+
+
+Aqui tienes el ejemplo de código a seguir:
+
+📘 Formato del archivo Page Object (pages/ExamplePage.ts):
+
+import { Page, Locator, expect } from '@playwright/test';
+
+export class ExamplePage {
+  readonly page: Page;
+  readonly usernameInput: Locator;
+  readonly passwordInput: Locator;
+  readonly loginButton: Locator;
+  readonly dashboardHeader: Locator;
+
+  constructor(page: Page) {
+    this.page = page;
+    this.usernameInput = page.locator('#username');
+    this.passwordInput = page.locator('#password');
+    this.loginButton = page.locator('button[type="submit"]');
+    this.dashboardHeader = page.locator('h1');
+  }
+
+  async goto() {
+    await this.page.goto('https://example.com/login');
+  }
+
+  async login(username: string, password: string) {
+    await this.usernameInput.fill(username);
+    await this.passwordInput.fill(password);
+    await this.loginButton.click();
+  }
+
+  async verifyDashboard() {
+    await expect(this.dashboardHeader).toHaveText('Dashboard');
+  }
+}
+
+Resultado esperado: Un archivo de prueba en TypeScript que utilice Playwright
+reflejando fielmente el caso de prueba en código automatizado funcional dame el test y la pagina juntos !!
+
+

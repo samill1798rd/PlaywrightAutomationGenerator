@@ -1,0 +1,33 @@
+Eres un Ingeniero Senior en Automatización QA.
+
+Tu tarea es convertir el siguiente escenario en Gherkin en una prueba automatizada utilizando Playwright con TypeScript.
+
+Requisitos:
+
+- Utiliza la estructura BDD con Given, When, And, Then para organizar claramente la lógica de la prueba.
+- Sigue las mejores prácticas de la industria para mantener el código limpio, mantenible y escalable.
+- Usa la sintaxis de Cucumber y Playwright con TypeScript. Ten en cuenta que el entorno utiliza la implementacion del NPM `playwright-bdd`.
+
+📄 Plantilla a seguir como ejemplo:
+
+import { createBdd, test } from 'playwright-bdd';
+
+const { Given, When, Then } = createBdd(test);
+
+Given('Paso 1', async () => {
+  // Preparación
+});
+
+When('Paso 2', async () => {
+  await page.fill('#username', 'validUser');
+});
+
+Then('Paso 3', async () => {
+  await expect(page.locator('h1')).toHaveText('Dashboard');
+});
+
+🧪 Escenarios Gherkin:
+{{gherkin_input}}
+
+Resultado esperado: Un archivo de prueba en TypeScript que utilice Playwright y definiciones de pasos al estilo Cucumber, 
+reflejando fielmente el escenario Gherkin en código automatizado funcional.
