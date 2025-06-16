@@ -55,7 +55,8 @@ bdd-to-playwright/
 │   ├── index.ts               # Main entry point (CLI)
 │   ├── openaiService.ts       # OpenAI integration logic
 │   └── templates/
-│       └── promptTemplate.txt # Prompt template for AI model
+│       └── promptTemplateBDD.txt # Prompt template for AI model
+│       └── promptTemplatePOM.txt # Prompt template for AI model
 ├── output/
 │   └── generatedTest.ts       # Auto-generated test output
 ├── .env                       # Contains OpenAI API key (excluded)
